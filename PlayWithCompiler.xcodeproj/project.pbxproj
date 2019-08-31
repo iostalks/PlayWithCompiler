@@ -65,13 +65,13 @@
 		AE9198C7231708BF008B356A /* PlayWithCompiler */ = {
 			isa = PBXGroup;
 			children = (
-				AE9198CF231708CF008B356A /* Simple */,
+				AE9198CF231708CF008B356A /* Lexer */,
 				AE9198C8231708BF008B356A /* main.swift */,
 			);
 			path = PlayWithCompiler;
 			sourceTree = "<group>";
 		};
-		AE9198CF231708CF008B356A /* Simple */ = {
+		AE9198CF231708CF008B356A /* Lexer */ = {
 			isa = PBXGroup;
 			children = (
 				AE9198D0231708E7008B356A /* SimpleLexer.swift */,
@@ -79,7 +79,7 @@
 				AE9198D423170E83008B356A /* TokenType.swift */,
 				AE538E632319A17500872072 /* TokenReader.swift */,
 			);
-			path = Simple;
+			path = Lexer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
