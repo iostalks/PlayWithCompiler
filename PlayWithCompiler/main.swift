@@ -8,37 +8,28 @@
 
 import Foundation
 
+// -----------------
+// Lecture-3 Demo
+// -----------------
 
-var lexer = SimpleLexer()
+var cal = SimpleCalculator()
+var lex = SimpleLexer()
 
-// ----
+var script = "int age = b+3;"
 
-var script = "int age = 45"
-print("parse:",script)
+//var tokens: TokenReader = lex.tokenize(script)
+//if let node = cal.intDeclare(&tokens) {
+//    dumpAST(node, intent: "")
+//}
 
-var tokenReader = lexer.tokenize(script)
-dump(tokenReader)
+//script = "2+3*5"
+//print("\n计算: " + script + "，看上去一切正常。")
+//cal.evaluate(script)
 
-// ----
+//script = "2+"
+//print("\n: " + script + "，应该有语法错误。")
+//cal.evaluate(script)
 
-script = "in age = 45"
-print("\nparse:",script)
-
-tokenReader = lexer.tokenize(script)
-dump(tokenReader)
-
-// ----
-
-script = "age >= 45"
-print("\nparse:", script)
-
-tokenReader = lexer.tokenize(script)
-dump(tokenReader)
-
-// ----
-
-script = "age > 45"
-print("\nparse:", script)
-
-tokenReader = lexer.tokenize(script)
-dump(tokenReader)
+script = "2+3+4"
+print("\n计算: " + script + "，结合性出现错误，虽然结果是正确的。")
+cal.evaluate(script)
