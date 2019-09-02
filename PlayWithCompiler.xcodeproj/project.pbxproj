@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AE538E642319A17500872072 /* TokenReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE538E632319A17500872072 /* TokenReader.swift */; };
+		AE538E68231C0D2900872072 /* ASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE538E67231C0D2900872072 /* ASTNode.swift */; };
+		AE538E6A231C0EA500872072 /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE538E69231C0EA500872072 /* SimpleCalculator.swift */; };
 		AE9198C9231708BF008B356A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198C8231708BF008B356A /* main.swift */; };
 		AE9198D1231708E7008B356A /* SimpleLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198D0231708E7008B356A /* SimpleLexer.swift */; };
 		AE9198D323170E30008B356A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198D223170E30008B356A /* Token.swift */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		AE538E632319A17500872072 /* TokenReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReader.swift; sourceTree = "<group>"; };
+		AE538E67231C0D2900872072 /* ASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNode.swift; sourceTree = "<group>"; };
+		AE538E69231C0EA500872072 /* SimpleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
 		AE9198C5231708BF008B356A /* PlayWithCompiler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlayWithCompiler; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9198C8231708BF008B356A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE9198D0231708E7008B356A /* SimpleLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLexer.swift; sourceTree = "<group>"; };
@@ -46,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE538E66231C0D1D00872072 /* Grammar */ = {
+			isa = PBXGroup;
+			children = (
+				AE538E67231C0D2900872072 /* ASTNode.swift */,
+				AE538E69231C0EA500872072 /* SimpleCalculator.swift */,
+			);
+			path = Grammar;
+			sourceTree = "<group>";
+		};
 		AE9198BC231708BF008B356A = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +78,7 @@
 		AE9198C7231708BF008B356A /* PlayWithCompiler */ = {
 			isa = PBXGroup;
 			children = (
+				AE538E66231C0D1D00872072 /* Grammar */,
 				AE9198CF231708CF008B356A /* Lexer */,
 				AE9198C8231708BF008B356A /* main.swift */,
 			);
@@ -139,7 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE538E68231C0D2900872072 /* ASTNode.swift in Sources */,
 				AE9198D323170E30008B356A /* Token.swift in Sources */,
+				AE538E6A231C0EA500872072 /* SimpleCalculator.swift in Sources */,
 				AE9198D523170E83008B356A /* TokenType.swift in Sources */,
 				AE9198D1231708E7008B356A /* SimpleLexer.swift in Sources */,
 				AE538E642319A17500872072 /* TokenReader.swift in Sources */,
