@@ -54,13 +54,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE443059231E71AE005C685C /* Script */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Script;
-			sourceTree = "<group>";
-		};
 		AE538E66231C0D1D00872072 /* Grammar */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +84,6 @@
 		AE9198C7231708BF008B356A /* PlayWithCompiler */ = {
 			isa = PBXGroup;
 			children = (
-				AE443059231E71AE005C685C /* Script */,
 				AE538E66231C0D1D00872072 /* Grammar */,
 				AE9198CF231708CF008B356A /* Lexer */,
 				AE9198C8231708BF008B356A /* main.swift */,
