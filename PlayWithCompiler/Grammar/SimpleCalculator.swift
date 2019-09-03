@@ -12,7 +12,7 @@ import Foundation
  * 一个简单的AST节点的实现。
  * 属性包括：类型、文本值、父节点、子节点。
  */
-class SimpleASTNode: ASTNode {
+private class SimpleASTNode: ASTNode {
     var parent: SimpleASTNode? = nil
     var children = [SimpleASTNode]()
     let nodeType: ASTNodeType
@@ -124,7 +124,7 @@ struct SimpleCalculator {
         return result
     }
     
-    mutating func prog(_ tokens: inout TokenReader) -> SimpleASTNode? {
+    mutating private func prog(_ tokens: inout TokenReader) -> SimpleASTNode? {
         let node = SimpleASTNode(.Programm, text: "Calculator")
         if let child = self.additive(&tokens) {
             node.addChild(child)
@@ -133,7 +133,7 @@ struct SimpleCalculator {
     }
     
     // 语法解析：赋值语句
-    mutating func intDeclare(_ tokens: inout TokenReader) -> SimpleASTNode? {
+    mutating private func intDeclare(_ tokens: inout TokenReader) -> SimpleASTNode? {
         // 尝试取出 int
         guard let intToken = tokens.peek(), intToken.getType() == .Int else {
             return nil
@@ -177,7 +177,7 @@ struct SimpleCalculator {
     }
     
     // 语法解析: 加法表达式
-    mutating func additive(_ tokens: inout TokenReader) -> SimpleASTNode? {
+    mutating private func additive(_ tokens: inout TokenReader) -> SimpleASTNode? {
         guard var child1 = self.multiplicative(&tokens) else {
             return nil
         }
@@ -207,7 +207,7 @@ struct SimpleCalculator {
     }
     
     // 语法解析: 乘法表达式
-    mutating func multiplicative(_ tokens: inout TokenReader) -> SimpleASTNode? {
+    mutating private func multiplicative(_ tokens: inout TokenReader) -> SimpleASTNode? {
         let child1 = self.primary(&tokens)
 
         guard let ssToken = tokens.peek(),
@@ -228,7 +228,7 @@ struct SimpleCalculator {
     }
     
     // 语法解析: 基础表达式元素
-    mutating func primary(_ tokens: inout TokenReader) -> SimpleASTNode? {
+    mutating private func primary(_ tokens: inout TokenReader) -> SimpleASTNode? {
         guard let token = tokens.peek() else {
             return nil
         }
