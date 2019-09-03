@@ -60,7 +60,7 @@ struct SimpleCalculator {
     // 执行计算脚本，输出 AST 和计算结果
     public mutating func evaluate(_ script: String) {
         if let tree = self.parse(script) {
-            dumpAST(tree, intent: "")
+//            dumpAST(tree, intent: "")
             let result = self.evaluate(tree, intent: "")
             print("Calculate Result:", result)
         } else {
@@ -80,7 +80,7 @@ struct SimpleCalculator {
     
     // 对某个 AST 节点求值，并打印求值过程
     private func evaluate(_ node: ASTNode, intent: String) -> Int {
-        print(intent, "Calculating:", node.getType())
+        print(intent, "Calculating:", node.getType(), node.getText())
         
         // 获取两个操作数
         func getTwoOperands(_ node: ASTNode) -> (left: Int, right: Int) {
@@ -178,21 +178,30 @@ struct SimpleCalculator {
     
     // 语法解析: 加法表达式
     mutating func additive(_ tokens: inout TokenReader) -> SimpleASTNode? {
-        let child1 = self.multiplicative(&tokens)
-        
-        guard let chd1 = child1,
-            let pmToken = tokens.peek(),
-            (pmToken.getType() == .Plus || pmToken.getType() == .Minus) else {
-            return child1
-        }
-        let _ = tokens.read() // 移除加号或减号
-        guard let chd2 = self.additive(&tokens) else {
-            assert(false, "invalid additive expression, expecting the right part.")
+        guard var child1 = self.multiplicative(&tokens) else {
             return nil
         }
-        let node = SimpleASTNode(.Additive, text: pmToken.getText())
-        node.addChild(chd1)
-        node.addChild(chd2)
+        // node 持有树的根节点
+        var node = child1
+        
+        while true {
+            guard
+                let pmToken = tokens.peek(),
+                (pmToken.getType() == .Plus || pmToken.getType() == .Minus) else {
+                break
+            }
+            let _ = tokens.read() // 移除加号或减号
+            // 这里应该判断一下 child2 是否为空，老师文章里面没有
+            if let child2 = self.multiplicative(&tokens) {
+                node = SimpleASTNode(.Additive, text: pmToken.getText())
+                node.addChild(child1)
+                node.addChild(child2)
+                child1 = node
+            } else {
+                assert(false, "invalid additive expression, expecting the right part.")
+                break
+            }
+        }
         
         return node
     }
