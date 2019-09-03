@@ -53,7 +53,7 @@ struct SimpleScript {
             }
         case .Multiplicative:
             let (value1, value2) = getTwoOperands(node)
-            if node.getText() == "+" {
+            if node.getText() == "*" {
                 result = value1 * value2
             } else {
                 result = value1 / value2
@@ -91,11 +91,12 @@ struct SimpleScript {
         default: break
         }
         
+        // 打印顶层语句
         if (intent == "") {
             if (node.getType() == .IntDeclaration || node.getType() == .AssignmentStmt) {
                 print(node.getText(), ":", result)
-            } else {
-                print(result)
+            } else if (node.getType() != .Programm){
+                print("Result:", result)
             }
         }
         
@@ -104,27 +105,30 @@ struct SimpleScript {
 }
 
 func REPL() {
-    print("\n>")
-    
-    var parser = SimpleParser()
-    let script = SimpleScript()
-    
-    var scriptText = ""
-    
+    let parser = SimpleParser()
+    var script = SimpleScript()
+
     while true {
-        guard let script = readLine() else {
+        print("\n>>>")
+        
+        guard let scriptText = readLine() else {
             break
         }
-        if (script == "exit();") {
+        if (scriptText == "exit();") {
             print("good byte!")
             break
         } else {
-            guard let semi = script.last, semi == ";" else {
-                assert(false, "script need end with semicolon.")
+            guard let semi = scriptText.last, semi == ";" else {
+                print("ERROR: script need end with semicolon.")
+                continue
+            }
+            guard let tree = parser.parse(scriptText) else {
+                assert(false, "parser error")
                 break
             }
-            var tree = parser.parse(script)
+            SimpleParser.dumpAST(tree, intent: "")
+            
+            let _ = script.evaluate(tree, intent: "")
         }
     }
-
 }

@@ -62,7 +62,7 @@ private class SimpleASTNode: ASTNode {
 struct SimpleParser {
     
     // 解析脚本，返回根节点
-    public mutating func parse(_ code: String) -> ASTNode? {
+    public func parse(_ code: String) -> ASTNode? {
         var lexer = SimpleLexer()
         var tokens: TokenReader = lexer.tokenize(code)
         
@@ -268,7 +268,7 @@ struct SimpleParser {
     static func dumpAST(_ node: ASTNode, intent: String) {
         print(intent, node.getType(), node.getText())
         for chd in node.getChildren() {
-            dumpAST(chd, intent: "\t")
+            dumpAST(chd, intent: intent + "\t")
         }
     }
 }
