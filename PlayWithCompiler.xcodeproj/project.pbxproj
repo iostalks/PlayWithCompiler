@@ -57,10 +57,10 @@
 		AE443067231F5321005C685C /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				AE443068231F5321005C685C /* SimpleCalculator.swift */,
-				AE443069231F5321005C685C /* SimpleScript.swift */,
 				AE44306A231F5321005C685C /* ASTNode.swift */,
+				AE443068231F5321005C685C /* SimpleCalculator.swift */,
 				AE44306B231F5321005C685C /* SimpleParser.swift */,
+				AE443069231F5321005C685C /* SimpleScript.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -94,10 +94,10 @@
 		AE9198CF231708CF008B356A /* Lexer */ = {
 			isa = PBXGroup;
 			children = (
-				AE9198D0231708E7008B356A /* SimpleLexer.swift */,
 				AE9198D223170E30008B356A /* Token.swift */,
 				AE9198D423170E83008B356A /* TokenType.swift */,
 				AE538E632319A17500872072 /* TokenReader.swift */,
+				AE9198D0231708E7008B356A /* SimpleLexer.swift */,
 			);
 			path = Lexer;
 			sourceTree = "<group>";
