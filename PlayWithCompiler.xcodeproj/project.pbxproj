@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE44305B231E71BD005C685C /* SimpleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44305A231E71BD005C685C /* SimpleScript.swift */; };
-		AE44305D231EC039005C685C /* SimpleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44305C231EC039005C685C /* SimpleParser.swift */; };
+		AE44306C231F5322005C685C /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE443068231F5321005C685C /* SimpleCalculator.swift */; };
+		AE44306D231F5322005C685C /* SimpleScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE443069231F5321005C685C /* SimpleScript.swift */; };
+		AE44306E231F5322005C685C /* ASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44306A231F5321005C685C /* ASTNode.swift */; };
+		AE44306F231F5322005C685C /* SimpleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE44306B231F5321005C685C /* SimpleParser.swift */; };
 		AE538E642319A17500872072 /* TokenReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE538E632319A17500872072 /* TokenReader.swift */; };
-		AE538E68231C0D2900872072 /* ASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE538E67231C0D2900872072 /* ASTNode.swift */; };
-		AE538E6A231C0EA500872072 /* SimpleCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE538E69231C0EA500872072 /* SimpleCalculator.swift */; };
 		AE9198C9231708BF008B356A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198C8231708BF008B356A /* main.swift */; };
 		AE9198D1231708E7008B356A /* SimpleLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198D0231708E7008B356A /* SimpleLexer.swift */; };
 		AE9198D323170E30008B356A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198D223170E30008B356A /* Token.swift */; };
@@ -31,11 +31,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AE44305A231E71BD005C685C /* SimpleScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleScript.swift; sourceTree = "<group>"; };
-		AE44305C231EC039005C685C /* SimpleParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleParser.swift; sourceTree = "<group>"; };
+		AE443068231F5321005C685C /* SimpleCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
+		AE443069231F5321005C685C /* SimpleScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleScript.swift; sourceTree = "<group>"; };
+		AE44306A231F5321005C685C /* ASTNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTNode.swift; sourceTree = "<group>"; };
+		AE44306B231F5321005C685C /* SimpleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleParser.swift; sourceTree = "<group>"; };
 		AE538E632319A17500872072 /* TokenReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReader.swift; sourceTree = "<group>"; };
-		AE538E67231C0D2900872072 /* ASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASTNode.swift; sourceTree = "<group>"; };
-		AE538E69231C0EA500872072 /* SimpleCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalculator.swift; sourceTree = "<group>"; };
 		AE9198C5231708BF008B356A /* PlayWithCompiler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlayWithCompiler; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9198C8231708BF008B356A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE9198D0231708E7008B356A /* SimpleLexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLexer.swift; sourceTree = "<group>"; };
@@ -54,15 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE538E66231C0D1D00872072 /* Grammar */ = {
+		AE443067231F5321005C685C /* Parser */ = {
 			isa = PBXGroup;
 			children = (
-				AE538E67231C0D2900872072 /* ASTNode.swift */,
-				AE538E69231C0EA500872072 /* SimpleCalculator.swift */,
-				AE44305C231EC039005C685C /* SimpleParser.swift */,
-				AE44305A231E71BD005C685C /* SimpleScript.swift */,
+				AE443068231F5321005C685C /* SimpleCalculator.swift */,
+				AE443069231F5321005C685C /* SimpleScript.swift */,
+				AE44306A231F5321005C685C /* ASTNode.swift */,
+				AE44306B231F5321005C685C /* SimpleParser.swift */,
 			);
-			path = Grammar;
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		AE9198BC231708BF008B356A = {
@@ -84,8 +84,8 @@
 		AE9198C7231708BF008B356A /* PlayWithCompiler */ = {
 			isa = PBXGroup;
 			children = (
-				AE538E66231C0D1D00872072 /* Grammar */,
 				AE9198CF231708CF008B356A /* Lexer */,
+				AE443067231F5321005C685C /* Parser */,
 				AE9198C8231708BF008B356A /* main.swift */,
 			);
 			path = PlayWithCompiler;
@@ -159,15 +159,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE538E68231C0D2900872072 /* ASTNode.swift in Sources */,
 				AE9198D323170E30008B356A /* Token.swift in Sources */,
-				AE44305D231EC039005C685C /* SimpleParser.swift in Sources */,
-				AE538E6A231C0EA500872072 /* SimpleCalculator.swift in Sources */,
 				AE9198D523170E83008B356A /* TokenType.swift in Sources */,
-				AE44305B231E71BD005C685C /* SimpleScript.swift in Sources */,
+				AE44306F231F5322005C685C /* SimpleParser.swift in Sources */,
 				AE9198D1231708E7008B356A /* SimpleLexer.swift in Sources */,
+				AE44306C231F5322005C685C /* SimpleCalculator.swift in Sources */,
 				AE538E642319A17500872072 /* TokenReader.swift in Sources */,
 				AE9198C9231708BF008B356A /* main.swift in Sources */,
+				AE44306E231F5322005C685C /* ASTNode.swift in Sources */,
+				AE44306D231F5322005C685C /* SimpleScript.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
