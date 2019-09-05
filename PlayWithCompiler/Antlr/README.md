@@ -1,4 +1,4 @@
-# Antlr
+# ANTLR
 
 Antlr 是一款根据词法规则和语法规则，自动生成词法和语法分析器的工具。支持大多数主流的编程语言。
 
@@ -17,7 +17,7 @@ $ alias grun='java org.antlr.v4.gui.TestRig'
 生成 Parser：
 
 ```shell
-antlr4 Swift.g4
+antlr Swift.g4
 ```
 
 编译 Parser:
