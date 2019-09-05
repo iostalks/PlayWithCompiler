@@ -19,4 +19,6 @@
 
 - [05 | 语法分析（三）：实现一门简单的脚本语言](https://time.geekbang.org/column/article/125926)
 
+- [06 | 编译器前端工具（一）：用Antlr生成词法、语法分析器](https://time.geekbang.org/column/article/126910)
+  
 </details>
