@@ -63,5 +63,3 @@ import Foundation
      Identifier newAge
  Result: 40
  */
-
-REPL()
