@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol FunctionType: Type {
+    func getReturnType() -> Type?
+    func getParamTypes() -> [Type?]
+    func matchParameterTypes(_ paramTypes: [Type]) -> Bool
+}
