@@ -11,9 +11,9 @@ import Foundation
 protocol TokenReader {
     var posi: Int { get set }
     // 读取下一个 token，并从流中删除
-    mutating func read() -> Token?
+    mutating func read() -> SimpleToken?
     // 读取下一个 token，不删除
-    func peek() -> Token?
+    func peek() -> SimpleToken?
     // 流回退一个 token
     mutating func unread()
     
