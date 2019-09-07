@@ -21,9 +21,18 @@ extension Scope {
     func getVariable(_ name: String) -> Variable? {
         return StaticScope.getVariable(self, name: name)
     }
+    
+    func getFunction(_ name: String, paramsType: [Type]) -> Function? {
+        return StaticScope.getFunction(self, name: name, paramsType: paramsType)
+    }
+    
+    func getFunctionVariable(_ name: String, paramsType: [Type]) -> Variable? {
+        return StaticScope.getFunctionVariable(self, name: name, paramsType: paramsType)
+    }
 }
 
 struct StaticScope {
+    // 获取某个变量
     static func getVariable(_ scope: Scope, name: String) -> Variable? {
         for s in scope.symbols {
             if s is Variable && s.name == name {
@@ -33,11 +42,33 @@ struct StaticScope {
         return nil
     }
     
-    static func getFunction(_ scope: Scope, name: String, paramsType: Array<Type>) {
-        for function in scope.symbols {
-            if (function.name == name) {
-                
+    // 获取某个函数
+    static func getFunction(_ scope: Scope, name: String, paramsType: [Type]) -> Function? {
+        for s in scope.symbols {
+            guard let f = s as? Function else {
+                break
+            }
+            if (f.matchParameterTypes(paramsType) && f.name == name) {
+                return f
             }
         }
+        return nil
+    }
+    
+    // 获取一个函数的参数
+    static func getFunctionVariable(_ scope: Scope, name: String, paramsType: [Type]) -> Variable? {
+        for s in scope.symbols {
+            guard let v = s as? Variable else {
+                break
+            }
+            guard let type = v.type,
+                let fType = type as? FunctionType else {
+                break
+            }
+            if fType.matchParameterTypes(paramsType) && v.name == name {
+                return v
+            }
+        }
+        return nil
     }
 }

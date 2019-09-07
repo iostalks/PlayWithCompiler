@@ -75,10 +75,12 @@ class Function: Scope, FunctionType {
     }
     
     func isMethod() -> Bool {
+        // TODO
         return false
     }
     
     func isConstructor() -> Bool {
+        // TODO
         return false
     }
 }
