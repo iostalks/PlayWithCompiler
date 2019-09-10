@@ -10,7 +10,8 @@ import Foundation
 
 protocol Type: class {
     func getName() -> String
-    func getEnclosingScope() -> Scope
+    
+    func getEnclosingScope() -> Scope?
     
     func isType(_ type: Type) -> Bool // 自省
 }

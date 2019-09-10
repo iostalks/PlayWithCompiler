@@ -168,6 +168,8 @@
 		AEC4B7542323B7EE008F300C /* FunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B7532323B7EE008F300C /* FunctionType.swift */; };
 		AEC4B7562323B7F6008F300C /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B7552323B7F6008F300C /* Function.swift */; };
 		AEC4B7582323BC12008F300C /* DefaultFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B7572323BC12008F300C /* DefaultFunctionType.swift */; };
+		AEC4B75A232494C0008F300C /* AnnotatedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B759232494C0008F300C /* AnnotatedTree.swift */; };
+		AEC4B75C232498B3008F300C /* CompilationLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B75B232498B3008F300C /* CompilationLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -345,6 +347,8 @@
 		AEC4B7532323B7EE008F300C /* FunctionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionType.swift; sourceTree = "<group>"; };
 		AEC4B7552323B7F6008F300C /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		AEC4B7572323BC12008F300C /* DefaultFunctionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFunctionType.swift; sourceTree = "<group>"; };
+		AEC4B759232494C0008F300C /* AnnotatedTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotatedTree.swift; sourceTree = "<group>"; };
+		AEC4B75B232498B3008F300C /* CompilationLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilationLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -601,6 +605,8 @@
 				AEC4B7532323B7EE008F300C /* FunctionType.swift */,
 				AEC4B7572323BC12008F300C /* DefaultFunctionType.swift */,
 				AEC4B7552323B7F6008F300C /* Function.swift */,
+				AEC4B759232494C0008F300C /* AnnotatedTree.swift */,
+				AEC4B75B232498B3008F300C /* CompilationLog.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -721,6 +727,7 @@
 				AE5E9127232194FF0084DA47 /* DFASerializer.swift in Sources */,
 				AE5E9180232194FF0084DA47 /* ArrayPredictionContext.swift in Sources */,
 				AE61939D23219B57005F4264 /* Type.swift in Sources */,
+				AEC4B75A232494C0008F300C /* AnnotatedTree.swift in Sources */,
 				AE5E911D232194FF0084DA47 /* ANTLRErrorListener.swift in Sources */,
 				AE5E914A232194FF0084DA47 /* StarLoopbackState.swift in Sources */,
 				AE5E9151232194FF0084DA47 /* PredictionMode.swift in Sources */,
@@ -737,6 +744,7 @@
 				AE5E9116232194FF0084DA47 /* Chunk.swift in Sources */,
 				AE5E911C232194FF0084DA47 /* LexerInterpreter.swift in Sources */,
 				AE5E9109232194FF0084DA47 /* ParseTreeVisitor.swift in Sources */,
+				AEC4B75C232498B3008F300C /* CompilationLog.swift in Sources */,
 				AE5E9115232194FF0084DA47 /* ParseTreePattern.swift in Sources */,
 				AE5E9136232194FF0084DA47 /* RecognitionException.swift in Sources */,
 				AE5E9164232194FF0084DA47 /* LexerMoreAction.swift in Sources */,

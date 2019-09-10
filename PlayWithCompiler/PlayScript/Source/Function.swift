@@ -10,8 +10,8 @@ import Foundation
 
 class Function: Scope, FunctionType {
     var name: String
-    var enclosingScope: Scope
-    var ctx: RuleContext
+    var enclosingScope: Scope?
+    var ctx: ParserRuleContext
     
     var visibility: Int = 0
     var symbols: [Symbol] = []
@@ -26,7 +26,7 @@ class Function: Scope, FunctionType {
     // 变量类型其实不应该有空的，但是老师 demo 设计是这样，就跟随了
     private var paramTypes: [Type?] = []
     
-    init(_ name: String, enclosingScope: Scope, ctx: RuleContext) {
+    init(_ name: String, enclosingScope: Scope?, ctx: ParserRuleContext) {
         self.name = name
         self.enclosingScope = enclosingScope
         self.ctx = ctx

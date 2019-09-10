@@ -10,9 +10,9 @@ import Foundation
 
 internal protocol Symbol: class {
     var name: String { get set } // 字符名
-    var enclosingScope: Scope { get set } // 所属作用域
+    var enclosingScope: Scope? { get set } // 所属作用域，顶级 scope 属于 nil
     var visibility: Int { get set }// 访问权限
-    var ctx: RuleContext { get set } // 关联的 AST 节点
+    var ctx: ParserRuleContext { get set } // 关联的 AST 节点
 }
 
 extension Symbol {
@@ -20,7 +20,7 @@ extension Symbol {
         return name
     }
     
-    public func getEnclosingScope() -> Scope {
+    public func getEnclosingScope() -> Scope? {
         return enclosingScope
     }
 }

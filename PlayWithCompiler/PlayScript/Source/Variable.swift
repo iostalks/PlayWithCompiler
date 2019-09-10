@@ -10,8 +10,8 @@ import Foundation
 
 public class Variable: Symbol, Hashable {
     var name: String
-    var enclosingScope: Scope
-    var ctx: RuleContext
+    var enclosingScope: Scope?
+    var ctx: ParserRuleContext
     
     var visibility: Int = 0
     
@@ -23,7 +23,7 @@ public class Variable: Symbol, Hashable {
     // 是否允许多次重复，这是一个创新的参数机制
     internal var multiplicity = 1
     
-    init(_ name: String, enclosingScope: Scope, ctx: RuleContext) {
+    init(_ name: String, enclosingScope: Scope?, ctx: ParserRuleContext) {
         self.name = name
         self.enclosingScope = enclosingScope
         self.ctx = ctx
