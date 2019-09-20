@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Antlr4
 
 public class Variable: Symbol, Hashable {
     var name: String

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Antlr4
 
 internal protocol Symbol: class {
     var name: String { get set } // 字符名

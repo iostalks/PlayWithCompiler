@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Antlr4
 
 class Function: Scope, FunctionType {
     var name: String
