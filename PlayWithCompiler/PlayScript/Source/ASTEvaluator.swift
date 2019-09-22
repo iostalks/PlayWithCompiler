@@ -9,11 +9,109 @@
 import Foundation
 import Antlr4
 
+class MyLValue: LValue {
+    let variable: Variable
+    var valueContainer: PlayObject
+    
+    init(_ valueContainer: PlayObject, variable: Variable) {
+        self.variable = variable
+        self.valueContainer = valueContainer
+    }
+    
+    func getValue() -> Any {
+        return valueContainer.getValue(variable)
+    }
+
+    func getVariable() -> Variable {
+        return variable
+    }
+    
+    func getValueContainer() -> PlayObject {
+        return valueContainer
+    }
+    
+    func setValue(_ value: Any) {
+        valueContainer.setValue(variable, value: value)
+        
+        // 如果 variable 是函数性变量，需要改变functionObject.receiver
+        if let funcValue = value as? FunctionObject {
+            funcValue.receiver = variable
+        }
+    }
+}
+
 class ASTEvaluator: PlayScriptBaseVisitor<Any> {
     let at: AnnotatedTree
     
+    var stack = [StackFrame]()
+    
     init(_ at: AnnotatedTree) {
         self.at = at
+    }
+    
+    func getLValue(_ variable: Variable) -> LValue {
+        var f = stack.last
+        
+        var container: PlayObject?
+        
+        while f != nil {
+            if f!.scope.containsSymbol(variable) {
+                container = f?.object
+                break
+            }
+            f = f?.parentFrame
+        }
+        
+        // 从闭包里找
+        if (container == nil) {
+            var frame = stack.last
+            while frame != nil {
+                if (frame!.contains(variable)) {
+                    container = frame?.object
+                    break
+                }
+                frame = frame?.parentFrame
+            }
+        }
+        
+        // 必须有，找不到直接奔溃
+        return MyLValue(container!, variable: variable)
+    }
+    
+    // --------------
+    // 为闭包获取环境变量
+    
+    
+    /// 为闭包获取环境变量
+    ///
+    /// - Parameters:
+    ///   - function: 闭包函数，这个函数会访问环境变量
+    ///   - valueContainer: 存放环境变量的容器
+    private func getClosureValues(_ function: Function, valueContainer: PlayObject) {
+        guard let closureVariabes = function.closureVariables  else {
+            return
+        }
+        for vari in closureVariabes {
+            // 此时变量还在栈中，取出来保存
+            let lValue = getLValue(vari)
+            let value = lValue.getValue()
+            valueContainer.fields[vari] = value
+        }
+    }
+    
+    // 为从函数中返回的对象设置闭包值。因为多个函数型属性可能共享值，所以要打包到ClassObject中，而不是functionObject中
+    func getClosureValues(_ classObject: ClassObject) {
+        let tmpObj = PlayObject()
+        for v in classObject.fields.keys {
+            if (v.type is FunctionType) {
+                if let object = classObject.fields[v], let funcObj = object as? FunctionObject {
+                    getClosureValues(funcObj.function, valueContainer: tmpObj)
+                }
+                
+            }
+        }
+        
+        classObject.fields.merge(tmpObj.fields, uniquingKeysWith: { (_, new) in new })
     }
     
     private func add(_ obj1: Any, obj2: Any, targetType: PrimitiveType) -> Any {
@@ -242,6 +340,11 @@ class ASTEvaluator: PlayScriptBaseVisitor<Any> {
             default: break
             }
         }
+        return rtn
+    }
+    
+    override func visitStatement(_ ctx: PlayScriptParser.StatementContext) -> Any? {
+        var rtn: Any? = nil
         return rtn
     }
 }

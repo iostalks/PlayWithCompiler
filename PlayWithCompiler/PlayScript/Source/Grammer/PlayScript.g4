@@ -3,9 +3,9 @@ grammar PlayScript;
 //options { tokenVocab=CommonLexer; }
 import CommonLexer;
 
-// @header {
-// package play;
-// }
+@header {
+package play;
+}
 
 classDeclaration
     : CLASS IDENTIFIER
@@ -34,9 +34,9 @@ memberDeclaration
     | fieldDeclaration
     // | constructorDeclaration
     // | genericConstructorDeclaration
-    // | interfaceDeclaration
+//     | interfaceDeclaration
     // | annotationTypeDeclaration
-    // | classDeclaration
+     | classDeclaration
     // | enumDeclaration
     ;
 
@@ -236,7 +236,7 @@ expression
     | expression bop='.'
       ( IDENTIFIER
       | functionCall
-    //   | THIS
+      | THIS
     //   | NEW nonWildcardTypeArguments? innerCreator
     //   | SUPER superSuffix
     //   | explicitGenericInvocation
@@ -248,8 +248,8 @@ expression
     | expression postfix=('++' | '--')
     | prefix=('+'|'-'|'++'|'--') expression
     | prefix=('~'|'!') expression
-    | expression bop=('*'|'/'|'%') expression  
-    | expression bop=('+'|'-') expression 
+    | expression bop=('*'|'/'|'%') expression
+    | expression bop=('+'|'-') expression
     | expression ('<' '<' | '>' '>' '>' | '>' '>') expression
     | expression bop=('<=' | '>=' | '>' | '<') expression
     | expression bop=INSTANCEOF typeType
@@ -275,7 +275,7 @@ expression
 primary
     : '(' expression ')'
     | THIS
-    // | SUPER
+    | SUPER
     | literal
     | IDENTIFIER
     // | typeTypeOrVoid '.' CLASS
@@ -302,6 +302,7 @@ primitiveType
     | LONG
     | FLOAT
     | DOUBLE
+    | STRING    //added on 2019-08-29 by Richard Gong
     ;
 
 creator

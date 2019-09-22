@@ -25,7 +25,17 @@
 		AE5E918D232194FF0084DA47 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5E90F2232194FF0084DA47 /* Symbol.swift */; };
 		AE61939B23219AC3005F4264 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61939A23219AC3005F4264 /* Variable.swift */; };
 		AE61939D23219B57005F4264 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61939C23219B57005F4264 /* Type.swift */; };
+		AE7F2FDD23377AD5000B9D7E /* ClosureAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F2FDC23377AD5000B9D7E /* ClosureAnalyzer.swift */; };
+		AE7F2FE223378507000B9D7E /* PlayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F2FE123378507000B9D7E /* PlayObject.swift */; };
+		AE7F2FE4233785F9000B9D7E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F2FE3233785F9000B9D7E /* Class.swift */; };
+		AE7F2FE623378602000B9D7E /* ClassObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F2FE523378602000B9D7E /* ClassObject.swift */; };
+		AE7F2FE823378609000B9D7E /* NullObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F2FE723378609000B9D7E /* NullObject.swift */; };
 		AE9198C9231708BF008B356A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9198C8231708BF008B356A /* main.swift */; };
+		AEA353CD23379DD5001CBA6B /* This.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA353CC23379DD5001CBA6B /* This.swift */; };
+		AEA353D223379EA8001CBA6B /* LValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA353D123379EA8001CBA6B /* LValue.swift */; };
+		AEA353D423379F85001CBA6B /* StackFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA353D323379F85001CBA6B /* StackFrame.swift */; };
+		AEA353D62337A248001CBA6B /* BlockScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA353D52337A248001CBA6B /* BlockScope.swift */; };
+		AEA353D82337A42F001CBA6B /* FunctionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA353D72337A42F001CBA6B /* FunctionObject.swift */; };
 		AEC4B7542323B7EE008F300C /* FunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B7532323B7EE008F300C /* FunctionType.swift */; };
 		AEC4B7562323B7F6008F300C /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B7552323B7F6008F300C /* Function.swift */; };
 		AEC4B7582323BC12008F300C /* DefaultFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4B7572323BC12008F300C /* DefaultFunctionType.swift */; };
@@ -101,8 +111,18 @@
 		AE5E90F2232194FF0084DA47 /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		AE61939A23219AC3005F4264 /* Variable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
 		AE61939C23219B57005F4264 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		AE7F2FDC23377AD5000B9D7E /* ClosureAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureAnalyzer.swift; sourceTree = "<group>"; };
+		AE7F2FE123378507000B9D7E /* PlayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayObject.swift; sourceTree = "<group>"; };
+		AE7F2FE3233785F9000B9D7E /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		AE7F2FE523378602000B9D7E /* ClassObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassObject.swift; sourceTree = "<group>"; };
+		AE7F2FE723378609000B9D7E /* NullObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullObject.swift; sourceTree = "<group>"; };
 		AE9198C5231708BF008B356A /* PlayWithCompiler */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PlayWithCompiler; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9198C8231708BF008B356A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AEA353CC23379DD5001CBA6B /* This.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = This.swift; sourceTree = "<group>"; };
+		AEA353D123379EA8001CBA6B /* LValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LValue.swift; sourceTree = "<group>"; };
+		AEA353D323379F85001CBA6B /* StackFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackFrame.swift; sourceTree = "<group>"; };
+		AEA353D52337A248001CBA6B /* BlockScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockScope.swift; sourceTree = "<group>"; };
+		AEA353D72337A42F001CBA6B /* FunctionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionObject.swift; sourceTree = "<group>"; };
 		AEC4B7532323B7EE008F300C /* FunctionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionType.swift; sourceTree = "<group>"; };
 		AEC4B7552323B7F6008F300C /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		AEC4B7572323BC12008F300C /* DefaultFunctionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFunctionType.swift; sourceTree = "<group>"; };
@@ -188,10 +208,20 @@
 				AEC4B7532323B7EE008F300C /* FunctionType.swift */,
 				AEC4B7572323BC12008F300C /* DefaultFunctionType.swift */,
 				AEC4B7552323B7F6008F300C /* Function.swift */,
+				AE7F2FE3233785F9000B9D7E /* Class.swift */,
+				AE7F2FE523378602000B9D7E /* ClassObject.swift */,
+				AE7F2FE723378609000B9D7E /* NullObject.swift */,
+				AEA353D72337A42F001CBA6B /* FunctionObject.swift */,
+				AEA353CC23379DD5001CBA6B /* This.swift */,
+				AEA353D123379EA8001CBA6B /* LValue.swift */,
+				AEA353D52337A248001CBA6B /* BlockScope.swift */,
+				AE7F2FE123378507000B9D7E /* PlayObject.swift */,
 				AEC4B759232494C0008F300C /* AnnotatedTree.swift */,
 				AEC4B75B232498B3008F300C /* CompilationLog.swift */,
 				AE3AC43C233382790026F70B /* ASTEvaluator.swift */,
 				AE3AC47323339A5D0026F70B /* PrimitiveType.swift */,
+				AE7F2FDC23377AD5000B9D7E /* ClosureAnalyzer.swift */,
+				AEA353D323379F85001CBA6B /* StackFrame.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -305,15 +335,20 @@
 			files = (
 				AE3AC45C233384450026F70B /* PlayScriptParser.java in Sources */,
 				AE3AC47423339A5D0026F70B /* PrimitiveType.swift in Sources */,
+				AE7F2FE223378507000B9D7E /* PlayObject.swift in Sources */,
 				AE3AC457233384450026F70B /* PlayScriptListener.swift in Sources */,
 				AE3AC460233384450026F70B /* PlayScriptVisitor.swift in Sources */,
 				AE61939D23219B57005F4264 /* Type.swift in Sources */,
+				AEA353D223379EA8001CBA6B /* LValue.swift in Sources */,
 				AEC4B75A232494C0008F300C /* AnnotatedTree.swift in Sources */,
 				AE3AC45B233384450026F70B /* CommonLexer.java in Sources */,
 				AEC4B75C232498B3008F300C /* CompilationLog.swift in Sources */,
+				AE7F2FE623378602000B9D7E /* ClassObject.swift in Sources */,
 				AE61939B23219AC3005F4264 /* Variable.swift in Sources */,
+				AEA353D423379F85001CBA6B /* StackFrame.swift in Sources */,
 				AEC4B7562323B7F6008F300C /* Function.swift in Sources */,
 				AEC4B7582323BC12008F300C /* DefaultFunctionType.swift in Sources */,
+				AEA353CD23379DD5001CBA6B /* This.swift in Sources */,
 				AE5E918D232194FF0084DA47 /* Symbol.swift in Sources */,
 				AE3AC459233384450026F70B /* PlayScriptParser.swift in Sources */,
 				AE3AC45F233384450026F70B /* PlayScriptParserATN.swift in Sources */,
@@ -321,9 +356,14 @@
 				AE9198C9231708BF008B356A /* main.swift in Sources */,
 				AE3AC458233384450026F70B /* PlayScriptBaseListener.swift in Sources */,
 				AE3AC43D233382790026F70B /* ASTEvaluator.swift in Sources */,
+				AE7F2FDD23377AD5000B9D7E /* ClosureAnalyzer.swift in Sources */,
+				AEA353D62337A248001CBA6B /* BlockScope.swift in Sources */,
 				AEC4B7542323B7EE008F300C /* FunctionType.swift in Sources */,
+				AEA353D82337A42F001CBA6B /* FunctionObject.swift in Sources */,
+				AE7F2FE4233785F9000B9D7E /* Class.swift in Sources */,
 				AE5E918B232194FF0084DA47 /* PlayScript.swift in Sources */,
 				AE5E918C232194FF0084DA47 /* Scope.swift in Sources */,
+				AE7F2FE823378609000B9D7E /* NullObject.swift in Sources */,
 				AE3AC461233384450026F70B /* PlayScriptLexerATN.swift in Sources */,
 				AE3AC45D233384450026F70B /* PlayScriptLexer.swift in Sources */,
 				AE3AC45A233384450026F70B /* PlayScriptLexer.java in Sources */,

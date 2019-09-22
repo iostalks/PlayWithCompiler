@@ -50,7 +50,7 @@ class Function: Scope, FunctionType {
     
     func isType(_ type: Type) -> Bool {
         if type is FunctionType {
-            
+            return true
         }
         return false
     }

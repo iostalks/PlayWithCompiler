@@ -29,6 +29,15 @@ extension Scope {
     func getFunctionVariable(_ name: String, paramsType: [Type]) -> Variable? {
         return StaticScope.getFunctionVariable(self, name: name, paramsType: paramsType)
     }
+    
+    func containsSymbol(_ symbol: Symbol) -> Bool {
+        // 同一作用域内，可以用变量名区分
+        return symbols.contains(where: { $0.name == symbol.name })
+    }
+    
+    func toString() -> String {
+        return "Scope \(self.name)"
+    }
 }
 
 struct StaticScope {
